@@ -2,7 +2,7 @@
 
 A vanilla frontend interface for a **Student Management System** built without frameworks as part of the Web Programming course.
 
-## 🚀 Features
+##  Features
 
 - **Student List Table:** Displays core student information with support for adding, editing, deleting, and viewing detailed dossiers.
 - **Dynamic Add/Edit Form:** Form fields for Full Name, Group, ISU ID, Dormitory Number, Room, Check-in Date, Foreigner status, and Notes. Includes automatic data population when editing.
@@ -12,17 +12,17 @@ A vanilla frontend interface for a **Student Management System** built without f
 - **Adaptive Design:** Minimal, responsive layout tailored for various screen sizes.
 - **Custom Favicon:** A cat icon reflecting the development team's character.
 
-## 🛠️ Technologies Used
+##  Technologies Used
 
 - **HTML5** (Semantic structure & validation attributes)
 - **CSS3** (Responsive styling and minimal layout)
 - **JavaScript (Vanilla ES6+)** (DOM manipulation, business logic separation, and Cookie management)
 
-## 👥 Project Team & Workflow
+##  Project Team & Workflow
 
 This project is developed collaboratively using Git/GitHub with a feature-branch workflow and issue tracking.
 
-## ⚙️ How to Run
+##  How to Run
 
 1. Clone the repository:
    ```bash
