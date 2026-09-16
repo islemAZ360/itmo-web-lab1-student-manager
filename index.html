@@ -3,54 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
-    <style>
-        
-        table, th, td {
-            border: 1px solid black; 
-            border-collapse: collapse; 
-            padding: 10px; 
-        }
-        
-    </style>
-
-
+    <title>Student Management</title>
+    <!-- connected my Favicon ও CSS -->
+    <link rel="icon" type="image/svg+xml" href="assets/cat.svg">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <div class="container">
+        <h1>Students List</h1>
+        <!-- connection to my form -->
+        <a href="form.html" class="btn" style="margin-bottom: 20px;">Добавить студента (Add Student)</a>
 
-    <table>
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Full Name</th>
+                        <th>Group</th>
+                        <th>ISU Number</th>
+                        <th>Room</th>
+                        <th>Procedures</th>
+                    </tr>
+                </thead>
+                <tbody id="student-body">
+                    <!-- Data will be loaded here via JS -->
+                </tbody>
+            </table>
+        </div>
 
-        <thead>
-
-        <tr>
-            <th>Full Name</th>
-            <th>Group</th>
-            <th>ISU Number</th>
-            <th>Room Number</th>
-            <th>Procedures</th>
-        </tr>
-
-        </thead>
-
-        <tbody id="student-body">
-
-
-        </tbody>
-    
-
-    </table>
-
-    <div id="student-dossier" style="display: none; margin-top: 20px; border: 1px solid #000; padding: 15px;">
-        <h3>Student Dossier</h3>
-        <p><strong>Full Name:</strong> <span id="dossier-name"></span></p>
-        <p><strong>Group:</strong> <span id="dossier-group"></span></p>
-        <p><strong>ISU Number:</strong> <span id="dossier-isu"></span></p>
-        <p><strong>Room Number:</strong> <span id="dossier-room"></span></p>
-        <button id="close-dossier-btn" onclick="closeDossier()">Close</button>
+        <!-- Dossier pop up (updated) -->
+        <div id="student-dossier" class="dossier-card" style="display: none; margin-top: 20px;">
+            <h3>Student Dossier</h3>
+            <p><strong>Full Name:</strong> <span id="dossier-name"></span></p>
+            <p><strong>Group:</strong> <span id="dossier-group"></span></p>
+            <p><strong>ISU Number:</strong> <span id="dossier-isu"></span></p>
+            <p><strong>Dormitory:</strong> <span id="dossier-dorm"></span></p>
+            <p><strong>Room Number:</strong> <span id="dossier-room"></span></p>
+            <p><strong>Accommodation Period:</strong> <span id="dossier-date"></span></p>
+            <p><strong>Foreigner:</strong> <span id="dossier-foreign"></span></p>
+            <p><strong>Notes:</strong> <span id="dossier-notes"></span></p>
+            <br>
+            <button id="close-dossier-btn" class="btn btn-danger">Close</button>
+        </div>
     </div>
 
-    <script src="script.js"> </script>
-
+    <!-- need to call using type="module" sothat  separate files works normally -->
+    <script type="module" src="js/script.js"></script>
 </body>
 </html>

@@ -1,0 +1,33 @@
+:root {
+  --primary: #2b2d42;
+  --bg: #edf2f4;
+  --text: #2b2d42;
+  --btn-bg: #8d99ae;
+  --btn-hover: #ef233c;
+  --danger: #d90429;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: system-ui, -apple-system, sans-serif; background-color: var(--bg); color: var(--text); padding: 20px; line-height: 1.5; }
+.container { max-width: 900px; margin: 0 auto; background: #fff; padding: 24px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+
+h1, h2 { margin-bottom: 20px; font-weight: 600; }
+.btn { display: inline-block; padding: 8px 14px; background: var(--btn-bg); color: #fff; text-decoration: none; border: none; border-radius: 4px; cursor: pointer; font-size: 14px; transition: 0.2s; }
+.btn:hover { background: var(--btn-hover); }
+.btn-danger { background: var(--danger); }
+
+/* Table responsive wrapping */
+.table-responsive { overflow-x: auto; margin-top: 20px; }
+table { width: 100%; border-collapse: collapse; min-width: 600px; }
+th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+th { background: var(--primary); color: #fff; }
+.actions { display: flex; gap: 6px; }
+
+/* Form styles */
+.form-group { margin-bottom: 16px; }
+label { display: block; margin-bottom: 6px; font-weight: 500; }
+input[type="text"], input[type="number"], input[type="date"], textarea {
+  width: 100%; padding: 8px 12px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px;
+}
+input[type="checkbox"] { width: auto; margin-right: 8px; }
+.error-msg { color: var(--danger); font-size: 13px; margin-top: 8px; display: none; background: #ffebee; padding: 8px; border-radius: 4px; }
