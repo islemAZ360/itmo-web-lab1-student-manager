@@ -31,7 +31,7 @@ function displayStudent() {
             <td>${student.isuNumber}</td>
             <td>${student.roomNumber}</td>
             <td>
-                <button>View</button>
+                <button onclick="viewStudent(${student.isuNumber})">View</button>
                 <button>Edit</button>
                 <button>Delete</button>
             </td>
@@ -53,11 +53,29 @@ function getStudentsFromCookie() {
 
     } return [];
 
+}
 
+function viewStudent(isu) {
+    
+    const studentsList = getStudentsFromCookie();
 
+    
+    const targetStudent = studentsList.find(student => student.isuNumber === isu);
 
+    
+    if (targetStudent) {
+        document.getElementById("dossier-name").textContent = targetStudent.fullName;
+        document.getElementById("dossier-group").textContent = targetStudent.group;
+        document.getElementById("dossier-isu").textContent = targetStudent.isuNumber;
+        document.getElementById("dossier-room").textContent = targetStudent.roomNumber;
 
+        
+        document.getElementById("student-dossier").style.display = "block";
+    }
+}
 
+function closeDossier() {
+    document.getElementById("student-dossier").style.display = "none";
 }
 
 
