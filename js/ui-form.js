@@ -6,11 +6,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const errorBox = document.getElementById('validationErrors');
     const pageTitle = document.getElementById('pageTitle');
     
-    // URL থেকে ID রিড করা (Edit Mode চেক)
+    
     const urlParams = new URLSearchParams(window.location.search);
     const editId = urlParams.get('id');
 
-    // REQUIREMENT: এডিট মোডে ডাটা অটোমেটিক প্রি-ফিল হবে
+    
     if (editId) {
         pageTitle.textContent = 'Редактировать студента';
         const student = getStudentById(editId);
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
         errorBox.style.display = 'none';
         errorBox.textContent = '';
 
-        // Form থেকে ডাটা নেওয়া
+        
         const studentData = {
             fullName: document.getElementById('fullName').value,
             group: document.getElementById('group').value,
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
             notes: document.getElementById('notes').value
         };
 
-        // JS Validation check
+        
         const validation = validateStudentData(studentData);
         if (!validation.isValid) {
             errorBox.innerHTML = validation.errors.join('<br>');
@@ -63,10 +63,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Create
                 addStudent(studentData);
             }
-            // সফল হলে লিস্ট পেজে ফিরে যাওয়া
+            
             window.location.href = 'index.html';
         } catch (error) {
-            // Cookies লিমিট বা কোনো এরর হ্যান্ডেল করা
+            // Cookies 
             errorBox.textContent = error.message;
             errorBox.style.display = 'block';
         }

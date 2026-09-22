@@ -19,7 +19,7 @@ export function saveStudents(studentsList) {
     document.cookie = `${COOKIE_NAME}=${encoded}; path=/; max-age=31536000; SameSite=Strict`;
 }
 
-// তোমার বন্ধুর দেওয়া ডিফল্ট ডাটা
+
 export function initDummyData() {
     let list = getStudents();
     if (list.length === 0) {
