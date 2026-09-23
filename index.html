@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Management</title>
-    <!--Cat Favicon-->
+    <!--cat-->
     <link rel="icon" type="image/svg+xml" href="assets/cat.svg">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -12,10 +12,10 @@
     <div class="container">
         <h1>Student Management System</h1>
 
-        <!--Header Actions-->
-        <button id="show-add-form-btn" class="btn" style="margin-bottom: 15px;">Add Student</button>
+        <!--header-->
+        <button id="show-add-form-btn" style="margin-bottom: 15px;">Add Student</button>
 
-        <!--Table Section-->
+        <!--table-->
         <div class="table-responsive">
             <table>
                 <thead>
@@ -28,12 +28,12 @@
                     </tr>
                 </thead>
                 <tbody id="student-body">
-                    <!--Populated dynamically via JS-->
+                    <!--js-->
                 </tbody>
             </table>
         </div>
 
-        <!--Student Dossier (Profile View)-->
+        <!--profile view-->
         <div id="student-dossier" class="card" style="display: none; margin-top: 25px;">
             <h3>Student Dossier</h3>
             <p><strong>Full Name:</strong> <span id="dossier-name"></span></p>
@@ -42,17 +42,17 @@
             <p><strong>Dormitory:</strong> <span id="dossier-dorm"></span></p>
             <p><strong>Room Number:</strong> <span id="dossier-room"></span></p>
             <p><strong>Accommodation Period:</strong> <span id="dossier-date"></span></p>
-            <p><strong>Foreign Student:</strong> <span id="dossier-foreign"></span></p>
+            <p><strong>Foreign Student:</strong><span id="dossier-foreign"></span></p>
             <p><strong>Notes:</strong> <span id="dossier-notes"></span></p>
             <br>
-            <button id="close-dossier-btn" class="btn btn-danger">Close</button>
+            <button id="close-dossier-btn" >Close</button>
         </div>
 
-        <!--Add / Edit Form Section-->
+        <!--add / edit-->
         <div id="student-form-section" class="card" style="display: none; margin-top: 25px;">
             <h3 id="form-title">Add Student</h3>
             <form id="student-form">
-                <!--Full Name(letters, spaces, hyphens only)-->
+                <!--full name-->
                 <div class="form-group">
                     <label for="fullName">Full Name *</label>
                     <input type="text" id="fullName" required maxlength="50" 
@@ -60,52 +60,55 @@
                            title="Letters, spaces, and hyphens only">
                 </div>
 
-                <!--  Group -->
+                <!--group -->
                 <div class="form-group">
                     <label for="group">Group *</label>
-                    <input type="text" id="group" required maxlength="10">
+                    <input type="text" id="group" required maxlength="5"
+                            pattern="^[A-Z]\d{4}$"
+                            title="One Capital letter followed by 4 digits (like : P3224)">
                 </div>
 
-                <!--ISU ID: Exactly 6 digits-->
+                <!--isuId-->
                 <div class="form-group">
                     <label for="isuId">ISU ID (6 digits) *</label>
-                    <input type="text" id="isuId" required pattern="^\d{6}$" maxlength="6" 
-                           title="Must be exactly 6 digits">
+                    <input type="text" id="isuId" required 
+                            pattern="^\d{6}$" maxlength="6" 
+                            title="Must be exactly 6 digits">
                 </div>
 
-                <!--Dormitory: Positive number-->
+                <!--dormitory-->
                 <div class="form-group">
                     <label for="dormitoryNumber">Dormitory Number *</label>
                     <input type="number" id="dormitoryNumber" required min="1" max="99">
                 </div>
 
-                <!--Room: Numbers only-->
+                <!--room-->
                 <div class="form-group">
                     <label for="room">Room Number *</label>
                     <input type="number" id="room" required min="1" max="9999">
                 </div>
 
-                <!--Accommodation Period: Realistic date range-->
+                <!--accommodation period-->
                 <div class="form-group">
                     <label for="accommodationPeriod">Accommodation Period *</label>
                     <input type="date" id="accommodationPeriod" required min="2020-01-01" max="2035-12-31">
                 </div>
 
-                <!--Foreigner Checkbox-->
+                <!--checkbox-->
                 <div class="form-group">
                     <label>
-                        <input type="checkbox" id="isForeigner"> Foreign Student
+                        <input type="checkbox" id="isInternational"> International Student
                     </label>
                 </div>
 
-                <!--Notes: Capped at 150 chars for cookie safety-->
+                <!--notes-->
                 <div class="form-group">
                     <label for="notes">Notes (Max 150 characters)</label>
                     <textarea id="notes" rows="3" maxlength="150"></textarea>
                 </div>
 
-                <button type="submit" class="btn">Save</button>
-                <button type="button" id="cancel-form-btn" class="btn btn-danger">Cancel</button>
+                <button type="submit" >Save</button>
+                <button type="button" id="cancel-form-btn" >Cancel</button>
             </form>
         </div>
     </div>
